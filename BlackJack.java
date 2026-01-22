@@ -1,8 +1,11 @@
+//Abraham Gonzalez
+
+//the imports to get the code running the utills
 import java.util.Random;
 import java.util.Scanner;
 
 public class BlackJack {
-
+    // these are the arrays of the game which are the cards and the values that each one of them have
     private static final String[] SUITS = { "Hearts", "Diamonds", "Clubs", "Spades" };
     private static final String[] RANKS = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King",
             "Ace" };
@@ -11,13 +14,13 @@ public class BlackJack {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        //these lines are functions in which one starts the deck and the other starts the game by shuffling the deck
         initializeDeck();
         shuffleDeck();
-
+        // Player total starts the player off with the their intial cards, and dealer total starts the program with their set of cards
         int playerTotal = dealInitialPlayerCards();
         int dealerTotal = dealInitialDealerCards();
-
+        // This line player turn works when the player hits a certain limit, and then if they do meet it they lose
         playerTotal = playerTurn(scanner, playerTotal);
         if (playerTotal > 21) {
             System.out.println("You busted! Dealer wins.");
